@@ -2,156 +2,140 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edmar Portfolio</title>
-
+<title>EduQuiz Game</title>
 <style>
-body {
-  font-family: Arial;
-  margin: 0;
-  background: #f5f5f5;
-  text-align: center;
-}
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f8ff;
+    text-align: center;
+    padding: 20px;
+  }
 
-header {
-  background: #292752;
-  color: white;
-  padding: 20px;
-}
+  .container {
+    background: white;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+  }
 
-nav a {
-  margin: 10px;
-  color: white;
-  text-decoration: none;
-}
+  button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
-.section {
-  padding: 40px 20px;
-}
-
-img {
-  max-width: 200px;
-  border-radius: 50%;
-}
-
-.gallery img {
-  width: 200px;
-  margin: 10px;
-  border-radius: 10px;
-}
-
-footer {
-  background: #292752;
-  color: white;
-  padding: 10px;
-}
+  #score {
+    font-weight: bold;
+    margin-top: 10px;
+  }
 </style>
 </head>
-
 <body>
 
-<header>
-  <h1>My Portfolio</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<div class="container">
+  <h2>📚 EduQuiz Game</h2>
+  <p id="question">Loading question...</p>
+  <div id="choices"></div>
+  <p id="score">Score: 0</p>
+</div>
 
-<!-- About -->
-<section id="about" class="section">
-  <img src="https://magbanuaedmar2-davqi.wordpress.com/wp-content/uploads/2025/10/gemini_generated_image_rlrctrlrctrlrctr4650359640073409459.png">
-  <p>I’m Edmar Magbanua, a creator who builds digital experiences.</p>
-</section>
+<script>
+const quiz = [
+  {
+    question: "What is the capital of the Philippines?",
+    choices: ["Cebu", "Manila", "Davao", "Baguio"],
+    answer: "Manila"
+  },
+  {
+    question: "What is 5 + 3?",
+    choices: ["5", "8", "10", "12"],
+    answer: "8"
+  },
+  {
+    question: "What planet do we live on?",
+    choices: ["Mars", "Venus", "Earth", "Jupiter"],
+    answer: "Earth"
+  },
+  {
+    question: "What is the largest ocean on Earth?",
+    choices: ["Atlantic", "Indian", "Pacific", "Arctic"],
+    answer: "Pacific"
+  },
+  {
+    question: "What is H2O commonly known as?",
+    choices: ["Salt", "Water", "Oxygen", "Hydrogen"],
+    answer: "Water"
+  },
+  {
+    question: "How many days are in a week?",
+    choices: ["5", "6", "7", "8"],
+    answer: "7"
+  },
+  {
+    question: "What is the square root of 16?",
+    choices: ["2", "3", "4", "5"],
+    answer: "4"
+  },
+  {
+    question: "Who is the national hero of the Philippines?",
+    choices: ["Bonifacio", "Rizal", "Aguinaldo", "Lapu-Lapu"],
+    answer: "Rizal"
+  },
+  {
+    question: "What is the boiling point of water?",
+    choices: ["50°C", "100°C", "150°C", "200°C"],
+    answer: "100°C"
+  },
+  {
+    question: "What is the primary source of energy for Earth?",
+    choices: ["Moon", "Sun", "Wind", "Water"],
+    answer: "Sun"
+  }
+];
 
-<!-- Skills -->
-<section id="skills" class="section">
-  <h2>Skills</h2>
-  <p>HTML, CSS, Canva, Figma, WordPress</p>
-</section>
+let current = 0;
+let score = 0;
 
-<!-- Projects -->
-<section id="projects" class="section">
-  <h2>Projects</h2>
+function loadQuestion() {
+  if (current >= quiz.length) {
+    document.querySelector(".container").innerHTML =
+      `<h2>🎉 Game Over!</h2>
+       <p>Your Score: ${score} / ${quiz.length}</p>
+       <button onclick="location.reload()">Play Again</button>`;
+    return;
+  }
 
-  <div class="gallery">
-    <img src="https://magbanuaedmar2-davqi.wordpress.com/wp-content/uploads/2025/10/788px-adobe_photoshop_cc_icon2830518269629405915.png">
-    <img src="https://magbanuaedmar2-davqi.wordpress.com/wp-content/uploads/2025/10/17610321986266459596483729844426.jpg">
-    <img src="https://magbanuaedmar2-davqi.wordpress.com/wp-content/uploads/2025/10/1706c9f16bd08eb5e03f1df3e0a94a1c1495533378521337252.jpg">
-  </div>
+  let q = quiz[current];
+  document.getElementById("question").innerText = q.question;
 
-  <iframe width="300" height="200"
-    src="https://www.youtube.com/embed/AYWSmmwdN2A"
-    allowfullscreen>
-  </iframe>
-</section>
+  let choicesDiv = document.getElementById("choices");
+  choicesDiv.innerHTML = "";
 
-<!-- Contact -->
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Email: magbanuaedmar2@gmail.com</p>
-  <p>Instagram: @Edmar777</p>
-  <p>Facebook: Edmar Pasquil Magbanua</p>
-</section>
-
-  </div>
-</section>
-<!-- Login Section -->
-<section class="login-section">
-  <h2>Member Login 🔐</h2>
-
-  <div class="login-box">
-    <h3>🔐 Welcome Back</h3>
-
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-
-    <button onclick="login()">Login</button>
-
-    <p id="login-msg"></p>
-  </div>
-</section>
-
-<style>
-/* Section Background */
-.login-section {
-  padding: 60px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #1e1e2f, #292752);
-  color: white;
+  q.choices.forEach(choice => {
+    let btn = document.createElement("button");
+    btn.innerText = choice;
+    btn.onclick = () => checkAnswer(choice);
+    choicesDiv.appendChild(btn);
+  });
 }
 
-/* Login Box */
-.login-box {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  padding: 35px;
-  width: 320px;
-  margin: auto;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.2);
+function checkAnswer(choice) {
+  if (choice === quiz[current].answer) {
+    score++;
+  }
+
+  current++;
+  document.getElementById("score").innerText = "Score: " + score;
+  loadQuestion();
 }
 
-/* Title */
-.login-box h3 {
-  margin-bottom: 20px;
-}
-
-/* Inputs */
-.login-box input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 10px;
-  outline: none;
-  background
-<footer>
-  <p>© 2025 Edmar</p>
-</footer>
+loadQuestion();
+</script>
 
 </body>
 </html>
