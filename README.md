@@ -1,112 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edmar Magbanua | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Reset and base styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { line-height: 1.6; color: #333; background: #f9f9f9; scroll-behavior: smooth; }
-    a { text-decoration: none; color: #0077ff; }
-    a:hover { text-decoration: underline; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edmar Portfolio</title>
 
-    /* Header / Nav */
-    header { background: #1a1a1a; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-    nav { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: auto; }
-    nav h1 { font-size: 1.8rem; letter-spacing: 1px; }
-    nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav ul li a { color: #fff; font-weight: 500; transition: 0.3s; }
-    nav ul li a:hover { color: #00d1ff; }
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f5f5f5;
+  text-align: center;
+}
 
-    /* Sections */
-    .section { padding: 4rem 1rem; text-align: center; }
-    h2 { font-size: 2rem; margin-bottom: 1rem; color: #1a1a1a; }
+header {
+  background: #292752;
+  color: white;
+  padding: 20px;
+}
 
-    /* About */
-    .profile { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 3px solid #0077ff; }
+nav a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
 
-    /* Video */
-    .video iframe { border-radius: 10px; }
+.section {
+  padding: 40px 20px;
+}
 
-    /* Projects */
-    .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
-    .card { background: #fff; padding: 1.5rem; width: 250px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-    .card h3 { margin-bottom: 0.5rem; color: #0077ff; }
+img {
+  max-width: 200px;
+  border-radius: 50%;
+}
 
-    /* Contact */
-    #contact a { color: #0077ff; font-weight: 500; }
+.gallery img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
 
-    /* Footer */
-    footer { background: #1a1a1a; color: #fff; padding: 1rem 0; text-align: center; font-size: 0.9rem; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .cards { flex-direction: column; align-items: center; }
-      nav ul { flex-direction: column; gap: 1rem; margin-top: 1rem; }
-    }
-  </style>
+footer {
+  background: #292752;
+  color: white;
+  padding: 10px;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <nav>
-      <h1>Edmar Magbanua</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <h1>My Portfolio</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <img src="/Gemini_Generated_Image_rlrctrlrctrlrctr.png" alt="Edmar Photo" class="profile">
-    <h2>Hello, I'm Edmar 👋</h2>
-    <p>BSIT Student passionate about web development, UI/UX design, and emerging technologies. I love creating clean and functional digital experiences.</p>
-  </section>
+<!-- About -->
+<section id="about" class="section">
+  <img src="https://magbanuaedmar2-davqi.wordpress.com/wp-content/uploads/2025/10/gemini_generated_image_rlrctrlrctrlrctr4650359640073409459.png">
+  <p>I’m Edmar Magbanua, a creator who builds digital experiences.</p>
+</section>
 
-  <!-- Video -->
-  <section class="section">
-    <h2>My Mood 🎬</h2>
-    <div class="video">
-      <iframe width="100%" height="300" 
-        src="https://www.youtube.com/embed/MGRm4IzK1SQ" 
-        frameborder="0" allowfullscreen></iframe>
-    </div>
-  </section>
+<!-- Skills -->
+<section id="skills" class="section">
+  <h2>Skills</h2>
+  <p>HTML, CSS, Canva, Figma, WordPress</p>
+</section>
 
-  <!-- Projects -->
 <!-- Projects -->
 <section id="projects" class="section">
-  <h2>My Projects 💻</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>UI Design Project</h3>
-      <p>Crafted sleek user interfaces and prototypes using <a href="https://www.figma.com/proto/DnWfcQfuA3DE6at1UtmNZ9/edmar?node-id=1-2&p=f&t=TYUitMrgVuw9yQu9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" target="_blank">Figma</a>.</p>
-    </div>
-    <div class="card">
-      <h3>Graphic Design Project</h3>
-      <p>Created engaging graphics and branding assets with <a href="https://www.canva.com/design/your-canva-link" target="_blank">Canva</a>.</p>
-    </div>
+  <h2>Projects</h2>
+
+  <div class="gallery">
+    <img src="https://magbanuaedmar2-davqi.wordpress.com/wp-content/uploads/2025/10/788px-adobe_photoshop_cc_icon2830518269629405915.png">
+    <img src="https://magbanuaedmar2-davqi.wordpress.com/wp-content/uploads/2025/10/17610321986266459596483729844426.jpg">
+    <img src="https://magbanuaedmar2-davqi.wordpress.com/wp-content/uploads/2025/10/1706c9f16bd08eb5e03f1df3e0a94a1c1495533378521337252.jpg">
+  </div>
+
+  <iframe width="300" height="200"
+    src="https://www.youtube.com/embed/AYWSmmwdN2A"
+    allowfullscreen>
+  </iframe>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Email: magbanuaedmar2@gmail.com</p>
+  <p>Instagram: @Edmar777</p>
+  <p>Facebook: Edmar Pasquil Magbanua</p>
+</section>
+
+  </div>
+</section>
+<!-- Login Section -->
+<section class="login-section">
+  <h2>Member Login 🔐</h2>
+
+  <div class="login-box">
+    <h3>🔐 Welcome Back</h3>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p id="login-msg"></p>
   </div>
 </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact Me 📩</h2>
-    <p>Gmail: <a href="magbanuaedmar240@gmail.com:">magbanuaedmar240@gmail.com</a></p>
-    <p>Facebook: <a href="https://facebook.com/edmar.pasquil.magbanua" target="_blank">My Profile</a></p>
-  </section>
+<style>
+/* Section Background */
+.login-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #1e1e2f, #292752);
+  color: white;
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Edmar Magbanua | All Rights Reserved</p>
-  </footer>
+/* Login Box */
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 35px;
+  width: 320px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Title */
+.login-box h3 {
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background
+<footer>
+  <p>© 2025 Edmar</p>
+</footer>
 
 </body>
 </html>
